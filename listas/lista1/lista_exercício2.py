@@ -21,10 +21,17 @@ for m in range(0, 3):
             M3[m,n] = complex(i,j)
 
 def estudo_matriz(A):
+    #Cálculo
     det = np.linalg.det(A)
     trace = np.trace(A)
-    print(A, "Determinante" + str(det),"Traço " + str(trace), "\n")
     
+    #Impressão
+    print("A matriz: \n", A, "\n")
+    print("Determinante : ", det)
+    print("Traço : ", trace, "\n")
+    print("--------------------------")
+
+#Execução
 estudo_matriz(M1)
 estudo_matriz(M2)
 estudo_matriz(M3)
