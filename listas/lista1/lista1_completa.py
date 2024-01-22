@@ -1,3 +1,15 @@
+"""
+Lista de exercício 1 - Topicos Especiais: Computação científica aplicada a matemática
+
+Realizado por:
+Caio Uehara Martins (caiouehara@usp.br)
+Kaique Micael Moreira de Oliveira (kaique_oliveira@usp.br)
+
+Professor:
+Luciano Magrini
+
+"""
+
 import numpy as np
 import cmath
 
@@ -129,4 +141,3 @@ a1, q, error = 3, (1/4), [10**(-2), 10**(-5), 10**(-10)]
 for E in error:
     n = pg_error_analysis(a1, q, E)
     print(f'n = {n}')
-
