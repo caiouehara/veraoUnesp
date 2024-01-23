@@ -111,7 +111,7 @@ def runge_kutta4(f, y0, h, a, b):
     return t_vetor, y_vetor
 
 ##Sistemas EDO de 2x2
-def rk4_passo(f, g, t, x, y, h):
+def rk4_passo_2por2(f, g, t, x, y, h):
     #PVI :: x' = f(t, x, y) e y' = g(t, x, y)
     #f e g são duas funções que definem o sistema
     #t é o tempo do instante anterior
@@ -136,7 +136,7 @@ def rk4_passo(f, g, t, x, y, h):
     return x_novo, y_novo
     
 
-def rk4_sistemas2por2(f, g, condicao_inicial, a, b, h):
+def rk4_sistemas_2por2(f, g, condicao_inicial, a, b, h):
     # f e g são as duas funcoes que definem o sistema
     # condical inicial (x0, y0) para t = a
     # intervalo de integracao [a, b]
@@ -154,7 +154,7 @@ def rk4_sistemas2por2(f, g, condicao_inicial, a, b, h):
     #Passo 2 :: Executar N vezes i rk4_passo
     for i in range(N):
         t_novo = t_vetor[i] + h
-        x_novo, y_novo = rk4_passo(f, g, t_vetor[i], x_vetor[i], y_vetor[i], h)
+        x_novo, y_novo = rk4_passo_2por2(f, g, t_vetor[i], x_vetor[i], y_vetor[i], h)
         
         t_vetor.append(t_novo)
         x_vetor.append(x_novo)
@@ -167,4 +167,62 @@ def descarte_transiente(serie_numerica, porcentagem):
     ponto_inicial = int(np.floor(N*porcentagem/100))
     serie_recortada = serie_numerica[ponto_inicial::]
     return serie_recortada
+
+
+##Sistemas EDO de 3x3
+def rk4_passo_3por3(f, g, p, t, x, y, z, h):
+    #PVI :: x' = f(t, x, y, z) e y' = g(t, x, y, z) e z' = p(t, x, y, z)
+    #f, g e p são duas funções que definem o sistema
+    #t é o tempo do instante anterior
+    #x, y, z são as soluções no instante do tempo anterior
+    #h é o tempo de integração
     
+    k1_f = f(t, x, y, z)
+    k1_g = g(t, x, y, z)
+    k1_p = p(t, x, y, z)
+    
+    k2_f = f(t+h/2, x+h/2*k1_f, y+h/2*k1_g, z+h/2*k1_p)
+    k2_g = g(t+h/2, x+h/2*k1_f, y+h/2*k1_g, z+h/2*k1_p)
+    k2_p = p(t+h/2, x+h/2*k1_f, y+h/2*k1_g, z+h/2*k1_p)
+    
+    k3_f = f(t+h/2, x+h/2*k2_f, y+h/2*k2_g, z+h/2*k2_p)
+    k3_g = g(t+h/2, x+h/2*k2_f, y+h/2*k2_g, z+h/2*k2_p)
+    k3_p = p(t+h/2, x+h/2*k2_f, y+h/2*k2_g, z+h/2*k2_p)
+    
+    k4_f = f(t+h, x+h*k3_f, y+h*k3_g, z+h*k3_p)
+    k4_g = g(t+h, x+h*k3_f, y+h*k3_g, z+h*k3_p)
+    k4_p = p(t+h, x+h*k3_f, y+h*k3_g, z+h*k3_p)
+    
+    x_novo = x+h*(k1_f+2*k2_f+2*k3_f+k4_f)/6
+    y_novo = y+h*(k1_g+2*k2_g+2*k3_g+k4_g)/6
+    z_novo = z+h*(k1_p+2*k2_p+2*k3_p+k4_p)/6
+
+    return x_novo, y_novo, z_novo
+    
+def rk4_sistemas_3por3(f, g, p, condicao_inicial, a, b, h):
+    # f e g são as duas funcoes que definem o sistema
+    # condical inicial (x0, y0, z0) para t = a
+    # intervalo de integracao [a, b]
+    # passo de integracao h
+    
+    #Passo 0: Iniciar o vetor de tempo e os vetores para x e y
+    t_vetor = [a]
+    x0, y0, z0 = condicao_inicial
+    x_vetor = [x0]
+    y_vetor = [y0]
+    z_vetor = [z0]
+    
+    #Passo 1:: Calcular N (número de repeticões)
+    N = int((b-a)/h)
+    
+    #Passo 2 :: Executar N vezes i rk4_passo
+    for i in range(N):
+        t_novo = t_vetor[i] + h
+        x_novo, y_novo, z_novo = rk4_passo_3por3(f, g, p, t_vetor[i], x_vetor[i], y_vetor[i], z_vetor[i], h)
+        
+        t_vetor.append(t_novo)
+        x_vetor.append(x_novo)
+        y_vetor.append(y_novo)
+        z_vetor.append(z_novo)
+        
+    return t_vetor, x_vetor, y_vetor, z_vetor
