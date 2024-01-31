@@ -18,15 +18,12 @@ def funcao(t, y):
 
 print("Solução caso (a)\n")
 tempo_vetor, solucao_vetor = mf.euler(funcao, 1, 10**(-1), 0, 15)
-print(solucao_vetor[-1])
 
 print("\nSolução caso (b)\n")
 tempo_vetor, solucao_vetor = mf.euler(funcao, 1, 10**(-2), 0, 15)
-print(solucao_vetor[-1])
 
 print("\nSolução caso (c)\n")
 tempo_vetor, solucao_vetor = mf.euler(funcao, 1, 10**(-4), 0, 15)
-print(solucao_vetor[-1])
 
 print(""" 
 ------------------------------------------------------------------------------
@@ -39,12 +36,10 @@ def funcao2(t, y):
 
 print("Solução caso (a)\n")
 tempo_vetor, solucao_vetor = mf.euler(funcao2, 2, 10**(-1), 0, 15)
-print(solucao_vetor[-1])
 
 print("\nSolução caso (b)\n")
 tempo_vetor, solucao_vetor = mf.euler(funcao2, 2, 10**(-2), 0, 15)
-print(solucao_vetor[-1])
+
 
 print("\nSolução caso (c)\n")
 tempo_vetor, solucao_vetor = mf.euler(funcao2, 2, 10**(-4), 0, 15)
-print(solucao_vetor[-1])

@@ -47,7 +47,7 @@ def erro_absoluto_medio(sol_exata, sol_numerica):
     erro_abs = 0
     for i in range(N):
         erro_abs = erro_abs + abs(sol_exata[i] - sol_numerica[i])
-    return erro_abs
+    return erro_abs/N
 
 #Erro Quadrático 
 #Entradas: sol_exata e sol_numerica
