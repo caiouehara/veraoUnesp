@@ -16,17 +16,17 @@ print("""
 def funcao(t, y):
     return 2*t*math.e**(2*t)+y
 
-print("Erro caso(a)\n")
-tempo_vetor, solucao_vetor = mf.euler(funcao, 2, 10**(-1), 0, 15)
-print(tempo_vetor[-1], solucao_vetor[-1])
+print("Solução caso (a)\n")
+tempo_vetor, solucao_vetor = mf.euler(funcao, 1, 10**(-1), 0, 15)
+print(solucao_vetor[-1])
 
-print("\nErro caso(b)\n")
-tempo_vetor, solucao_vetor = mf.euler(funcao, 2, 10**(-2), 0, 15)
-print(tempo_vetor[-1], solucao_vetor[-1])
+print("\nSolução caso (b)\n")
+tempo_vetor, solucao_vetor = mf.euler(funcao, 1, 10**(-2), 0, 15)
+print(solucao_vetor[-1])
 
-print("\nErro caso(c)\n")
-tempo_vetor, solucao_vetor = mf.euler(funcao, 2, 10**(-4), 0, 15)
-print(tempo_vetor[-1], solucao_vetor[-1])
+print("\nSolução caso (c)\n")
+tempo_vetor, solucao_vetor = mf.euler(funcao, 1, 10**(-4), 0, 15)
+print(solucao_vetor[-1])
 
 print(""" 
 ------------------------------------------------------------------------------
@@ -34,17 +34,17 @@ print("""
 ------------------------------------------------------------------------------
       """)
 
-def funcao(t, y):
+def funcao2(t, y):
     return 4+2*y-t
 
-print("Erro caso(a)\n")
-tempo_vetor, solucao_vetor = mf.euler(funcao, 2, 10**(-1), 0, 15)
-print(tempo_vetor[-1], solucao_vetor[-1])
+print("Solução caso (a)\n")
+tempo_vetor, solucao_vetor = mf.euler(funcao2, 2, 10**(-1), 0, 15)
+print(solucao_vetor[-1])
 
-print("\nErro caso(b)\n")
-tempo_vetor, solucao_vetor = mf.euler(funcao, 2, 10**(-2), 0, 15)
-print(tempo_vetor[-1], solucao_vetor[-1])
+print("\nSolução caso (b)\n")
+tempo_vetor, solucao_vetor = mf.euler(funcao2, 2, 10**(-2), 0, 15)
+print(solucao_vetor[-1])
 
-print("\nErro caso(c)\n")
-tempo_vetor, solucao_vetor = mf.euler(funcao, 2, 10**(-4), 0, 15)
-print(tempo_vetor[-1], solucao_vetor[-1])
+print("\nSolução caso (c)\n")
+tempo_vetor, solucao_vetor = mf.euler(funcao2, 2, 10**(-4), 0, 15)
+print(solucao_vetor[-1])
