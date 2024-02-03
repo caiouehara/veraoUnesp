@@ -1,5 +1,6 @@
 import funcoes as mf
 import math
+from matplotlib import pyplot as plt
 
 print(""" 
 ###############################################################################
@@ -39,7 +40,3 @@ tempo_vetor, solucao_vetor = mf.euler(funcao2, 2, 10**(-1), 0, 15)
 
 print("\nSolução caso (b)\n")
 tempo_vetor, solucao_vetor = mf.euler(funcao2, 2, 10**(-2), 0, 15)
-
-
-print("\nSolução caso (c)\n")
-tempo_vetor, solucao_vetor = mf.euler(funcao2, 2, 10**(-4), 0, 15)

@@ -226,3 +226,26 @@ def rk4_sistemas_3por3(f, g, p, condicao_inicial, a, b, h):
         z_vetor.append(z_novo)
         
     return t_vetor, x_vetor, y_vetor, z_vetor
+
+def heun(f, y0, h, a, b):
+    t_vetor = [float(a)]
+    y_vetor = [float(y0)]
+    
+    N = int( (b - a)/h )
+    
+    for m in range(N):
+        t_discreto = t_vetor[m] + h
+        
+        k1 = f(t_vetor[m], y_vetor[m])
+        k2 = f(t_vetor[m] + h, y_vetor[m] + h*k1)
+        
+        t_vetor.append(t_discreto)
+        y_vetor.append(y_vetor[m] + (h/2)*(k1+ k2))
+        
+    return t_vetor, y_vetor
+
+methods = {
+      "runge_kutta_4": runge_kutta4,
+      "euler": euler,
+      "heun": heun
+}
