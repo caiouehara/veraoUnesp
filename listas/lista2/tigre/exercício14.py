@@ -1,5 +1,9 @@
 import funcoes as mf
-import math
+from matplotlib import pyplot as plt
+import numpy as np
+
+#Caminho para a pasta de resultados
+path = "./listas/lista2/tigre/results/exercicio14/"
 
 print(""" 
 ###############################################################################
@@ -8,37 +12,45 @@ print("""
       """)
       
 #Função análise
-def analiseFuncao(funcaoAproximada, funcaoExata, y0, h, a, b, methodName):
-      #Aplicação do método de Euler
-      tempo_vetor, solucao_vetor = mf.methods[methodName](funcaoAproximada, y0, h, a, b)
-
-      #Cálculando a solução exata
-      N = len(tempo_vetor)
-      sol_exata_vetor = []
-      for i in range(N):
-            valor = funcaoExata(tempo_vetor[i])
-            sol_exata_vetor.append(valor)
-
-      #Cálculando o erro absoluto
-      erro_quad = mf.erro_quadratico(sol_exata_vetor, solucao_vetor)
-
-      #Printando o resultado
-      print("\nSolução\n")
-
-      print("Solução do t = 30 (aproximada): ", solucao_vetor[30-1])
-      print("Solução do t = 30 (exata)", sol_exata_vetor[30-1])
-      print("Erro quadrádico: ", erro_quad)
+def analiseFuncao(condicao_inicial, f, g, p, s, h, a, b):
+      #Aplicação do método de Runge Kutta 4x4
+      t, x_vec, y_vec, z_vec, w_vec = mf.rk4_sistemas_4por4(
+            f, g, p, s, condicao_inicial, a, b, h
+      )
       
-      return erro_quad
+      #Salvando o resultado em arquivo
+      matrix = np.zeros((len(t), 5), dtype=float)
+      for i in range(len(t)):
+            matrix[i, 0] = t[i]
+            matrix[i, 1] = x_vec[i]
+            matrix[i, 2] = y_vec[i]
+            matrix[i, 3] = z_vec[i]
+            matrix[i, 4] = w_vec[i]
+      np.savetxt(path + f'resultado_exemplo14.txt', matrix)
+      
+      return t, x_vec, y_vec, z_vec, w_vec
       
 #Definição das funções
-m = 100000
-k = 2*10**-6
-def funcao(t, y):
-      return k*(m-y)*y
+def x_f(t, x, y, z, w):
+      return 0.375*x+y+0.4*(z+1.7)
 
-def funcaoExata(t):
-      return (100000*math.exp(t/5))/(math.exp(t/5)+99)
+def y_f(t, x, y, z, w):
+      return -x
 
-print("Aplicação do Runge Kutta 4 \n")
-analiseFuncao(funcao, funcaoExata, 1000, 5*10**(-4), 0, 90, "runge_kutta_4")
+def z_f(t, x, y, z, w):
+      return (0.001)**(-1)*(w-z**(3))+3*z**(2)-x-0.15
+
+def w_f(t, x, y, z, w):
+      return (0.002)**(-1)*(1-5*z**(2)-w)
+
+#Aplicando a análise
+condicao_inicial = (0.2, 0.2, 0.2, 1.66)
+h = 5*10**(-5)
+t, x_vec, y_vec, z_vec, w_vec = analiseFuncao(condicao_inicial, x_f, y_f, z_f, w_f, h, 0, 50)
+
+#Gráfico
+plt.figure()
+plt.plot(t, w_vec, color = "red")
+plt.xlabel("Tempo (t)")
+plt.ylabel("Resultado via Runge Kutta 4")
+plt.show()

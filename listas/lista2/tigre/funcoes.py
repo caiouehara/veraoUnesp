@@ -199,8 +199,8 @@ def rk4_passo_3por3(f, g, p, t, x, y, z, h):
 
     return x_novo, y_novo, z_novo
     
-def rk4_sistemas_3por3(f, g, p, condicao_inicial, a, b, h):
-    # f e g são as duas funcoes que definem o sistema
+def rk4_sistemas_3por3(f, g, p, s, condicao_inicial, a, b, h):
+    # f, g, p são as três funcoes que definem o sistema
     # condical inicial (x0, y0, z0) para t = a
     # intervalo de integracao [a, b]
     # passo de integracao h
@@ -226,6 +226,77 @@ def rk4_sistemas_3por3(f, g, p, condicao_inicial, a, b, h):
         z_vetor.append(z_novo)
         
     return t_vetor, x_vetor, y_vetor, z_vetor
+
+##Sistemas EDO de 4x4 (Runge Kutta)
+def rk4_passo_4por4(f, g, p, s, t, x, y, z, w, h):
+    #PVI :: x' = f(t, x, y, z, w) e y' = g(t, x, y, z, w) e z' = p(t, x, y, z, w)
+    #f, g, p e s são as quatro funções que definem o sistema
+    #t é o tempo do instante anterior
+    #x, y, z, w são as soluções no instante do tempo anterior
+    #h é o tempo de integração
+    
+    k1_f = f(t, x, y, z, w)
+    k1_g = g(t, x, y, z, w)
+    k1_p = p(t, x, y, z, w)
+    k1_s = s(t, x, y, z, w)
+        
+    k2_f = f(t+h/2, x+h/2*k1_f, y+h/2*k1_g, z+h/2*k1_p, w+h/2*k1_s)
+    k2_g = g(t+h/2, x+h/2*k1_f, y+h/2*k1_g, z+h/2*k1_p, w+h/2*k1_s)
+    k2_p = p(t+h/2, x+h/2*k1_f, y+h/2*k1_g, z+h/2*k1_p, w+h/2*k1_s)
+    k2_s = s(t+h/2, x+h/2*k1_f, y+h/2*k1_g, z+h/2*k1_p, w+h/2*k1_s)
+        
+    k3_f = f(t+h/2, x+h/2*k2_f, y+h/2*k2_g, z+h/2*k2_p, w+h/2*k2_s)
+    k3_g = g(t+h/2, x+h/2*k2_f, y+h/2*k2_g, z+h/2*k2_p, w+h/2*k2_s)
+    k3_p = p(t+h/2, x+h/2*k2_f, y+h/2*k2_g, z+h/2*k2_p, w+h/2*k2_s)
+    k3_s = s(t+h/2, x+h/2*k2_f, y+h/2*k2_g, z+h/2*k2_p, w+h/2*k2_s)
+        
+    k4_f = f(t+h, x+h*k3_f, y+h*k3_g, z+h*k3_p, z+h*k3_s)
+    k4_g = g(t+h, x+h*k3_f, y+h*k3_g, z+h*k3_p, z+h*k3_s)
+    k4_p = p(t+h, x+h*k3_f, y+h*k3_g, z+h*k3_p, z+h*k3_s)
+    k4_s = s(t+h, x+h*k3_f, y+h*k3_g, z+h*k3_p, z+h*k3_s)
+        
+    x_novo = x+h*(k1_f+2*k2_f+2*k3_f+k4_f+k4_f)/6
+    y_novo = y+h*(k1_g+2*k2_g+2*k3_g+k4_g+k4_g)/6
+    z_novo = z+h*(k1_p+2*k2_p+2*k3_p+k4_p+k4_p)/6
+    w_novo = w+h*(k1_s*k2_s+2*k3_s+k4_s+k4_s)/6
+        
+    return x_novo, y_novo, z_novo, w_novo
+
+
+def rk4_sistemas_4por4(f, g, p, s, condicao_inicial, a, b, h):
+    # f, g, p e s são as quartro funcoes que definem o sistema
+    # condical inicial (x0, y0, z0, w0) para t = a
+    # intervalo de integracao [a, b]
+    # passo de integracao h
+    
+    #Passo 0: Iniciar o vetor de tempo e os vetores para x e y
+    t_vetor = [a]
+    x0, y0, z0, w0 = condicao_inicial
+    x_vetor = [x0]
+    y_vetor = [y0]
+    z_vetor = [z0]
+    w_vetor = [w0]
+    
+    #Passo 1:: Calcular N (número de repeticões)
+    N = int((b-a)/h)
+    
+    #Passo 2 :: Executar N vezes i rk4_passo
+    for i in range(N):
+        t_novo = t_vetor[i] + h
+        
+        try:
+            x_novo, y_novo, z_novo, w_novo = rk4_passo_4por4(f, g, p, s, t_vetor[i], x_vetor[i], y_vetor[i], z_vetor[i], w_vetor[i], h)
+        except OverflowError as error:
+            print(f"Parado no passo {i-1} por conta dos cálculos em excesso")
+            return t_vetor, x_vetor, y_vetor, z_vetor, w_vetor
+        
+        t_vetor.append(t_novo)
+        x_vetor.append(x_novo)
+        y_vetor.append(y_novo)
+        z_vetor.append(z_novo)
+        w_vetor.append(w_novo)
+        
+    return t_vetor, x_vetor, y_vetor, z_vetor, w_vetor
 
 def heun(f, y0, h, a, b):
     t_vetor = [float(a)]
