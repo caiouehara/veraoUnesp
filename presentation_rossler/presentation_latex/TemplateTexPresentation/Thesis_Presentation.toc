@@ -1,0 +1,12 @@
+\babel@toc {brazil}{}\relax 
+\beamer@sectionintoc {1}{Introdução}{3}{0}{1}
+\beamer@sectionintoc {2}{O Modelo SIR}{4}{0}{2}
+\beamer@subsectionintoc {2}{1}{Descrição Matemática}{4}{0}{2}
+\beamer@subsectionintoc {2}{2}{Número Básico de Reprodução}{5}{0}{2}
+\beamer@subsectionintoc {2}{3}{Tamanho da Epidemia}{6}{0}{2}
+\beamer@sectionintoc {3}{Modelo SIR em Grafos}{7}{0}{3}
+\beamer@subsectionintoc {3}{1}{Modelo de Configuração Percolado}{7}{0}{3}
+\beamer@subsectionintoc {3}{2}{Funções Geradas}{12}{0}{3}
+\beamer@subsectionintoc {3}{3}{Tamanho da epidemia}{15}{0}{3}
+\beamer@subsectionintoc {3}{4}{Exemplos}{20}{0}{3}
+\beamer@sectionintoc {4}{Referências}{23}{0}{4}
