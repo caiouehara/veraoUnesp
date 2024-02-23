@@ -44,14 +44,17 @@ init_a, init_b, init_c = 0.1, 0.1, 4
 
 
 fig = plt.figure(figsize=plt.figaspect(0.5))
-ax = fig.add_subplot(1, 2, 2, projection="3d")
+# ax = fig.add_subplot(1, 2, 2, projection="3d")
 # ax = fig.add_subplot(projection="3d")
 
-ax1 = fig.add_subplot(1, 2, 1)
+ax1 = fig.add_subplot(1, 3, 1)
+ax2 = fig.add_subplot(1, 3, 2)
+ax3 = fig.add_subplot(1, 3, 3)
 
 # textstr = "x -- red,\ny --green,\nz --blue"
 # props = dict(boxstyle="round", facecolor="wheat", alpha=0.5)
 
+"""
 ax1.text(
     -0.4,
     0.9,
@@ -79,25 +82,27 @@ ax1.text(
     fontsize=14,
     bbox=dict(facecolor="white", edgecolor="blue"),
 )
-
+"""
 
 t, x, y, z = sol_rossler(init_a, init_b, init_c)
-drawing = ax.plot3D(x, y, z)
 
 
-ax1.plot(t, x, color="red")
-ax1.plot(t, y, color="green")
-ax1.plot(t, z, color="blue")
-ax1.set_xlabel("t")
-ax1.set_ylabel("x y z")
-ax1.set_title("Série Temporal do Sistema Rossler")
+ax1.plot(x, y, color="red")
+ax1.set_xlabel("x")
+ax1.set_ylabel("y")
+ax1.set_title("xy")
 # plt.tight_layout()
 
+ax2.plot(x, z, color="green")
+ax2.set_xlabel("x")
+ax2.set_ylabel("z")
+ax2.set_title("xz")
 
-ax.set_xlabel("x")
-ax.set_ylabel("y")
-ax.set_zlabel("z")
-ax.set_title("Rossler System Solution")
+
+ax3.plot(y, z, color="blue")
+ax3.set_xlabel("x")
+ax3.set_ylabel("z")
+ax3.set_title("xz")
 
 
 fig.subplots_adjust(bottom=0.25)
@@ -136,17 +141,32 @@ def update(val):
     ax_a = a_slider.val
     ax_b = b_slider.val
     ax_c = c_slider.val
-    ax.clear()
     ax1.clear()
+    ax2.clear()
+    ax3.clear()
     t, x, y, z = sol_rossler(ax_a, ax_b, ax_c)
     print("x", x)
     print("y", y)
     print("z", z)
-    ax.plot3D(x, y, z)
-    ax1.plot(t, x, color="red")
-    ax1.plot(t, y, color="green")
-    ax1.plot(t, z, color="blue")
+
+    # testing
+    ax1.plot(x, y, color="red")
+    ax1.set_xlabel("x")
+    ax1.set_ylabel("y")
+    ax1.set_title("xy")
+    # plt.tight_layout()
+
+    ax2.plot(x, z, color="green")
+    ax2.set_xlabel("x")
+    ax2.set_ylabel("z")
+    ax2.set_title("xz")
+
+    ax3.plot(y, z, color="blue")
+    ax3.set_xlabel("x")
+    ax3.set_ylabel("z")
+    ax3.set_title("xz")
     # text
+    """
     ax1.text(
         -0.4,
         0.9,
@@ -174,6 +194,7 @@ def update(val):
         fontsize=14,
         bbox=dict(facecolor="white", edgecolor="blue"),
     )
+    """
 
     fig.canvas.draw_idle()
     print("after plot")
