@@ -22,19 +22,21 @@
 \headcommand {\beamer@subsectionentry {0}{2}{2}{7}{A história de Otto Rossler}}
 \headcommand {\slideentry {2}{2}{1}{7/7}{A história de Otto Rossler}{0}}
 \headcommand {\beamer@framepages {7}{7}}
-\headcommand {\beamer@subsectionpages {7}{7}}
-\headcommand {\beamer@subsectionentry {0}{2}{3}{8}{Sistema de Rossler}}
-\headcommand {\slideentry {2}{3}{1}{8/8}{Sistema de Rossler}{0}}
+\headcommand {\slideentry {2}{2}{2}{8/8}{A história de Otto Rossler}{0}}
 \headcommand {\beamer@framepages {8}{8}}
-\headcommand {\beamer@sectionpages {4}{8}}
-\headcommand {\beamer@subsectionpages {8}{8}}
-\headcommand {\sectionentry {3}{Referências}{9}{Referências}{0}}
-\headcommand {\slideentry {3}{0}{1}{9/9}{}{0}}
+\headcommand {\beamer@subsectionpages {7}{8}}
+\headcommand {\beamer@subsectionentry {0}{2}{3}{9}{Sistema de Rossler}}
+\headcommand {\slideentry {2}{3}{1}{9/9}{Sistema de Rossler}{0}}
 \headcommand {\beamer@framepages {9}{9}}
-\headcommand {\slideentry {3}{0}{2}{10/10}{}{0}}
+\headcommand {\beamer@sectionpages {4}{9}}
+\headcommand {\beamer@subsectionpages {9}{9}}
+\headcommand {\sectionentry {3}{Referências}{10}{Referências}{0}}
+\headcommand {\slideentry {3}{0}{1}{10/10}{}{0}}
 \headcommand {\beamer@framepages {10}{10}}
-\headcommand {\beamer@partpages {1}{10}}
-\headcommand {\beamer@subsectionpages {9}{10}}
-\headcommand {\beamer@sectionpages {9}{10}}
-\headcommand {\beamer@documentpages {10}}
-\headcommand {\gdef \inserttotalframenumber {10}}
+\headcommand {\slideentry {3}{0}{2}{11/11}{}{0}}
+\headcommand {\beamer@framepages {11}{11}}
+\headcommand {\beamer@partpages {1}{11}}
+\headcommand {\beamer@subsectionpages {10}{11}}
+\headcommand {\beamer@sectionpages {10}{11}}
+\headcommand {\beamer@documentpages {11}}
+\headcommand {\gdef \inserttotalframenumber {11}}
