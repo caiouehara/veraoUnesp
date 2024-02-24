@@ -1,0 +1,161 @@
+
+\documentclass[12pt,a4paper]{article} % Fonte 12, Papel A4
+\usepackage[brazil]{babel} % Hifenizac¸˜ao em portuguˆes
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{exscale}
+\usepackage{graphicx}
+\usepackage{amsfonts}
+\usepackage{amstext}
+\usepackage{amssymb}
+\usepackage{tabto}
+\usepackage{mathrsfs}
+\usepackage[top=2cm,bottom=3cm,left=3cm,right=2cm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{enumerate}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat = newest}
+\usepgfplotslibrary{colormaps}
+
+\def\modulus{sqrt(1+(1/(x^2 - 1))^2)}
+
+\newtheorem{teo}{Teorema}
+\newtheorem{lema}[teo]{Lema}
+\newtheorem{cor}[teo]{Corolário}
+\newtheorem{prop}{Proposição}
+\newtheorem{obs}{Observação}
+\theoremstyle{definition}
+\newtheorem{defi}{Definição}
+\newtheorem{exem}{Exemplo}
+\newtheorem{ex}{Exercício}
+\numberwithin{equation}{ex}
+\newenvironment{sol}
+{\renewcommand\qedsymbol{$\blacksquare$}\begin{proof}[Solução]}
+  {\end{proof}}
+
+\newenvironment{costumteo}[1]
+  {\renewcommand\theteo{#1}\teo}
+  {\endteo}
+  
+\newenvironment{costumlema}[1]
+  {\renewcommand\thelema{#1}\lema}
+  {\endlema}
+  
+\newenvironment{costumdefi}[1]
+  {\renewcommand\thedefi{#1}\defi}
+  {\enddefi}
+
+\newenvironment{costumprop}[1]
+  {\renewcommand\theprop{#1}\prop}
+  {\endprop}
+\newenvironment{costumex}[1]
+  {\renewcommand\theex{#1}\ex}
+  {\endex}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definição}[section]
+
+
+\renewcommand{\qedsymbol}{$\blacksquare$}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\N}{\mathbb{N}}
+\renewcommand{\thesection}{\Roman{section}}  
+\renewcommand{\thesubsection}{\thesection.\Roman{subsection}}
+\title{Seminário: Tópicos de matemática computacional \\ Sistema de Rossler}
+\author{Kaique M. M. de Oliveira \\ Caio U. Martins}
+
+\begin{document}
+
+\maketitle
+\date{}
+
+\section{Pesquisa histórica}
+
+\subsection{Contextualização da Teoria do Caos}
+
+\begin{itemize}
+	\item [$\bullet$] Quais são os tópicos discutidos
+	
+	- A teoria do caos é uma teoria matemática, que permite a descrição de fenômenos relacionados a sistemas dinâmicos.
+
+	- Um sistema dinâmico é um sistema que muda com o tempo devido a uma causa e um efeito.
+
+	- Um evento caótico é um evento que por fins práticos é impossível de se prever o seu desenvolvimento conforme o tempo aumenta.
+	
+	\item [$\bullet$] Newton e a causalidade
+	
+	Uma das primeiras concepções sobre os sistemas dinâmicos é o princípio da causalidade, que é a propriedade de um evento futuro ser  unicamente determinado pelas propriedades do presente.
+	
+	\item [$\bullet$]  Laplace e o determinismo
+	
+	- O conceito de determinismo se transformou na discussão presente no livro "Le système de la nature" de 1770, na qual o filosofo d'Holbach faz uma afirmação sobre a viabilidade de calcular os efeitos de uma determinada causa de modo universal.
+	
+	- Mas, é Laplace que clarificou o conceito do que é determinismo universal, que diz que o universo é unicamente determinado pelas leis da física. "O universo no bater do relógio".
+	
+	\item [$\bullet$] Poincaré e o espaço de fase
+	
+	- Representação de um espaço abstrato, no qual se aplica certas leis físicas com uma certa série de parâmetros.
+		
+	\item [$\bullet$] Kolmogorov e o sistemas dinâmicos
+	
+	- Modelos lineares e modelos não lineares.
+	
+	- A soma das causas pode não necessariamente ser a soma dos efeitos.
+		
+	\item [$\bullet$] Lorenz e o efeito borboleta
+		
+	- "Predictability: does the flap of a butterfly's wing in Brazil set off a tornado in Texas?
+		
+	- Pequenas variações no estado inicial podem induzir magnitudes de ordens muito maiores do estado final.
+	
+\end{itemize}
+
+\subsection{Breve Biografia de Otto Rossler e os sistemas dinâmicos}
+
+	 Otto Rossler nasceu na Alemanhã e foi um bioquímico conhecido pela equação teórica do Sistema de Rossler. 
+	
+	Escreveu mais de 300 artigos científicos e estudou medicina na Universidade de Tuebingen.
+	
+	Possui uma grande fase da sua vida investigando a resoluções de equações diferenciais da bioquímica, usando computadores eletrônicos e digitais da época.
+			
+ 	No começo de 1970, Otto Rossler fez seus primeiros contatos com Art Winfree, que trocavam cartas sobre sistemas dinâmicos.
+
+	Em 1975, nas trocas de carta entre Otto e Winfree, Art desafiou Rossler a encontrar uma reação bioquímica que reproduzia o atrator de Lorenz e enviou um conjunto de 10 papers de seus arquivos para ele.
+			
+	Nesse conjunto um dos papers era o de Lorenz, no qual Otto ficou bastante impressionado.
+			
+	Muito influenciado, Otto falhou em encontrar a tal reação, mas encontrou um atrator mais simples, no qual deu origem a seu primeiro paper sobre o sistema de Rossler.
+
+
+\section{Estudo matemático computacional}
+
+
+
+\section{} 
+	\begin{thebibliography}{3}
+		\bibitem{}
+		ATOMOSYD
+		\newblock OTTO E. RÖSSLER
+		\newblock\emph{http://www.atomosyd.net/spip.php?article6},
+		\oldstylenums{2008}.
+		
+		\bibitem{International Journal of Bifurcation and ChaosVol. 20, No. 11}
+		INFLUENCES ON OTTO E. ROSSLER’S EARLIEST PAPER ON CHAOS
+		\newblock C. LETELLIER and V. MESSAGER
+		\newblock\emph{International Journal of Bifurcation and Chaos Vol. 20, No. 11},
+		\oldstylenums{2010}.
+		
+		\bibitem{Doering-Lopes}
+		Equações Diferenciais Ordinárias
+		\newblock Claus Ivo Doering e Artur Oscar Lopes
+		\newblock \emph{IMPA, 2016}.
+		\newblock \emph{ISBN: 978-85-244-0425-2}, 6ª edição.
+		
+		\bibitem{Viana-Espinar}
+		Differential Equations: A Dynamical Systems Approach to Theory and Practice
+		\newblock Marcelo Viana, José M. Espinar
+		\newblock \emph{Graduate Studies in Mathematics, 2021}.
+	\end{thebibliography}
+\end{document}

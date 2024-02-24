@@ -3,5 +3,7 @@
 \beamer@sectionintoc {2}{Pesquisa histórica}{4}{0}{2}
 \beamer@subsectionintoc {2}{1}{Contextualização da Teoria do Caos}{4}{0}{2}
 \beamer@subsectionintoc {2}{2}{A história de Otto Rossler}{7}{0}{2}
-\beamer@subsectionintoc {2}{3}{Sistema de Rossler}{9}{0}{2}
-\beamer@sectionintoc {3}{Referências}{10}{0}{3}
+\beamer@sectionintoc {3}{Sistema de Rossler}{9}{0}{3}
+\beamer@subsectionintoc {3}{1}{Abordagem Analítica}{9}{0}{3}
+\beamer@sectionintoc {4}{Análise numérico-computacional}{15}{0}{4}
+\beamer@sectionintoc {5}{Referências}{21}{0}{5}

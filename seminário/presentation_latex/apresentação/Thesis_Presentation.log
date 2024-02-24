@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.2.22)  23 FEB 2024 14:55
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.2.22)  24 FEB 2024 10:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1544,7 +1544,7 @@ File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 LaTeX Font Warning: Font shape `T1/lmss/m/sc' in size <8> not available
 (Font)              Font shape `T1/lmr/m/sc' tried instead on input line 103.
 
-<images/usp-logo-transp.png, id=62, 762.85pt x 321.2pt>
+<images/usp-logo-transp.png, id=74, 762.85pt x 321.2pt>
 File: images/usp-logo-transp.png Graphic file (type png)
 <use images/usp-logo-transp.png>
 Package pdftex.def Info: images/usp-logo-transp.png  used on input line 103.
@@ -1665,11 +1665,14 @@ Package pdftex.def Info: images/usp-logo-transp.png  used on input line 130.
 
 {C:/Users/Tigrocomputer/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mat
 hsy.enc}]
+Overfull \vbox (9.35844pt too high) detected at line 150
+ []
+
 File: images/usp-logo-transp.png Graphic file (type png)
 <use images/usp-logo-transp.png>
 Package pdftex.def Info: images/usp-logo-transp.png  used on input line 150.
 (pdftex.def)             Requested size: 12.1523pt x 5.12128pt.
- [4
+[4
 
 ]
 File: images/usp-logo-transp.png Graphic file (type png)
@@ -1679,11 +1682,14 @@ Package pdftex.def Info: images/usp-logo-transp.png  used on input line 162.
  [5
 
 ]
+Overfull \vbox (7.22931pt too high) detected at line 181
+ []
+
 File: images/usp-logo-transp.png Graphic file (type png)
 <use images/usp-logo-transp.png>
 Package pdftex.def Info: images/usp-logo-transp.png  used on input line 181.
 (pdftex.def)             Requested size: 12.1523pt x 5.12128pt.
- [6
+[6
 
 ]
 File: images/usp-logo-transp.png Graphic file (type png)
@@ -1702,32 +1708,120 @@ Package pdftex.def Info: images/usp-logo-transp.png  used on input line 211.
 ]
 File: images/usp-logo-transp.png Graphic file (type png)
 <use images/usp-logo-transp.png>
-Package pdftex.def Info: images/usp-logo-transp.png  used on input line 222.
+Package pdftex.def Info: images/usp-logo-transp.png  used on input line 235.
 (pdftex.def)             Requested size: 12.1523pt x 5.12128pt.
  [9
 
+{C:/Users/Tigrocomputer/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mat
+hex.enc}{C:/Users/Tigrocomputer/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/l
+m/lm-rm.enc}{C:/Users/Tigrocomputer/AppData/Local/Programs/MiKTeX/fonts/enc/dvi
+ps/lm/lm-mathit.enc}]
+File: images/usp-logo-transp.png Graphic file (type png)
+<use images/usp-logo-transp.png>
+Package pdftex.def Info: images/usp-logo-transp.png  used on input line 235.
+(pdftex.def)             Requested size: 12.1523pt x 5.12128pt.
+ [10
+
+]
+File: images/usp-logo-transp.png Graphic file (type png)
+<use images/usp-logo-transp.png>
+Package pdftex.def Info: images/usp-logo-transp.png  used on input line 270.
+(pdftex.def)             Requested size: 12.1523pt x 5.12128pt.
+ [11
+
+]
+File: images/usp-logo-transp.png Graphic file (type png)
+<use images/usp-logo-transp.png>
+Package pdftex.def Info: images/usp-logo-transp.png  used on input line 270.
+(pdftex.def)             Requested size: 12.1523pt x 5.12128pt.
+ [12
+
+]
+File: images/usp-logo-transp.png Graphic file (type png)
+<use images/usp-logo-transp.png>
+Package pdftex.def Info: images/usp-logo-transp.png  used on input line 296.
+(pdftex.def)             Requested size: 12.1523pt x 5.12128pt.
+ [13
+
+]
+File: images/usp-logo-transp.png Graphic file (type png)
+<use images/usp-logo-transp.png>
+Package pdftex.def Info: images/usp-logo-transp.png  used on input line 296.
+(pdftex.def)             Requested size: 12.1523pt x 5.12128pt.
+ [14
+
+]
+File: images/usp-logo-transp.png Graphic file (type png)
+<use images/usp-logo-transp.png>
+Package pdftex.def Info: images/usp-logo-transp.png  used on input line 321.
+(pdftex.def)             Requested size: 12.1523pt x 5.12128pt.
+ [15
+
+]
+File: images/usp-logo-transp.png Graphic file (type png)
+<use images/usp-logo-transp.png>
+Package pdftex.def Info: images/usp-logo-transp.png  used on input line 321.
+(pdftex.def)             Requested size: 12.1523pt x 5.12128pt.
+ [16
+
+]
+File: images/usp-logo-transp.png Graphic file (type png)
+<use images/usp-logo-transp.png>
+Package pdftex.def Info: images/usp-logo-transp.png  used on input line 339.
+(pdftex.def)             Requested size: 12.1523pt x 5.12128pt.
+ [17
+
+]
+File: images/usp-logo-transp.png Graphic file (type png)
+<use images/usp-logo-transp.png>
+Package pdftex.def Info: images/usp-logo-transp.png  used on input line 358.
+(pdftex.def)             Requested size: 12.1523pt x 5.12128pt.
+
+[18
+
+]
+File: images/usp-logo-transp.png Graphic file (type png)
+<use images/usp-logo-transp.png>
+Package pdftex.def Info: images/usp-logo-transp.png  used on input line 381.
+(pdftex.def)             Requested size: 12.1523pt x 5.12128pt.
+ [19
+
+]
+File: images/usp-logo-transp.png Graphic file (type png)
+<use images/usp-logo-transp.png>
+Package pdftex.def Info: images/usp-logo-transp.png  used on input line 381.
+(pdftex.def)             Requested size: 12.1523pt x 5.12128pt.
+ [20
+
 ]
 LaTeX Font Info:    Trying to load font information for TS1+lmss on input line 
-246.
+400.
 
 (C:\Users\Tigrocomputer\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmss.fd
 File: ts1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 File: images/usp-logo-transp.png Graphic file (type png)
 <use images/usp-logo-transp.png>
-Package pdftex.def Info: images/usp-logo-transp.png  used on input line 246.
+Package pdftex.def Info: images/usp-logo-transp.png  used on input line 400.
 (pdftex.def)             Requested size: 12.1523pt x 5.12128pt.
 
-[10
+[21
 
 {C:/Users/Tigrocomputer/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1
 .enc} <C:/Users/Tigrocomputer/AppData/Local/Programs/MiKTeX/tex/latex/beamer/be
 americonarticle.pdf>]
 File: images/usp-logo-transp.png Graphic file (type png)
 <use images/usp-logo-transp.png>
-Package pdftex.def Info: images/usp-logo-transp.png  used on input line 266.
+Package pdftex.def Info: images/usp-logo-transp.png  used on input line 420.
 (pdftex.def)             Requested size: 12.1523pt x 5.12128pt.
- [11
+ [22
+
+]
+File: images/usp-logo-transp.png Graphic file (type png)
+<use images/usp-logo-transp.png>
+Package pdftex.def Info: images/usp-logo-transp.png  used on input line 440.
+(pdftex.def)             Requested size: 12.1523pt x 5.12128pt.
+ [23
 
 ]
 \tf@nav=\write6
@@ -1745,26 +1839,33 @@ LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
  ***********
 Package rerunfilecheck Info: File `Thesis_Presentation.out' has not changed.
-(rerunfilecheck)             Checksum: 98AE59CD14BAAE3A75907FBAE74B695A;939.
+(rerunfilecheck)             Checksum: 29A20FAA132D273DD3CF0F533E42D12D;1285.
  ) 
 Here is how much of TeX's memory you used:
- 39302 strings out of 474485
- 927721 string characters out of 5739958
- 1941542 words of memory out of 5000000
- 60774 multiletter control sequences out of 15000+600000
+ 39498 strings out of 474485
+ 933241 string characters out of 5739958
+ 1949542 words of memory out of 5000000
+ 60936 multiletter control sequences out of 15000+600000
  632257 words of font info for 115 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,20n,123p,738b,792s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/Tigrocomputer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/l
 mcsc10.pfb><C:/Users/Tigrocomputer/AppData/Local/Programs/MiKTeX/fonts/type1/pu
-blic/lm/lmss10.pfb><C:/Users/Tigrocomputer/AppData/Local/Programs/MiKTeX/fonts/
-type1/public/lm/lmss12.pfb><C:/Users/Tigrocomputer/AppData/Local/Programs/MiKTe
-X/fonts/type1/public/lm/lmss8.pfb><C:/Users/Tigrocomputer/AppData/Local/Program
-s/MiKTeX/fonts/type1/public/lm/lmsso10.pfb><C:/Users/Tigrocomputer/AppData/Loca
-l/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb>
-Output written on Thesis_Presentation.pdf (11 pages, 220342 bytes).
+blic/lm/lmex10.pfb><C:/Users/Tigrocomputer/AppData/Local/Programs/MiKTeX/fonts/
+type1/public/lm/lmmi10.pfb><C:/Users/Tigrocomputer/AppData/Local/Programs/MiKTe
+X/fonts/type1/public/lm/lmmi8.pfb><C:/Users/Tigrocomputer/AppData/Local/Program
+s/MiKTeX/fonts/type1/public/lm/lmss10.pfb><C:/Users/Tigrocomputer/AppData/Local
+/Programs/MiKTeX/fonts/type1/public/lm/lmss12.pfb><C:/Users/Tigrocomputer/AppDa
+ta/Local/Programs/MiKTeX/fonts/type1/public/lm/lmss8.pfb><C:/Users/Tigrocompute
+r/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsso10.pfb><C:/Users/Tig
+rocomputer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsso8.pfb><C:/U
+sers/Tigrocomputer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.p
+fb><C:/Users/Tigrocomputer/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/
+lmsy8.pfb><C:/Users/Tigrocomputer/AppData/Local/Programs/MiKTeX/fonts/type1/pub
+lic/txfonts/txsyb.pfb>
+Output written on Thesis_Presentation.pdf (23 pages, 374164 bytes).
 PDF statistics:
- 425 PDF objects out of 1000 (max. 8388607)
- 32 named destinations out of 1000 (max. 500000)
- 534 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 922 PDF objects out of 1000 (max. 8388607)
+ 63 named destinations out of 1000 (max. 500000)
+ 1252 words of extra memory for PDF output out of 10000 (max. 10000000)
 

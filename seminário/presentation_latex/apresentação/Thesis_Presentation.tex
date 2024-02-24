@@ -80,7 +80,7 @@
 % Thesis Info %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	% title
-		\title{Seminário: Sistema de Rossler}
+		\title{Sistema de Rossler}
 		\subtitle{Tópicos de matemática computacional}	
 	% author 
     % (In the mandatory argument "{}", separate multiple
@@ -89,12 +89,12 @@
 	% author names, with no "\and" or text formatting macros.)
 	% Example: 
     %\author[A. Author Albert Einstein]{Anthony Author \and Albert Einstein}
-		\author[]{Kaique Oliveira \\ Caio Uehara}
+		\author[]{Kaique M. M. de Oliveira \\ Caio U. Martins}
 	% supervisor	
-                \supervisor{Professor: Luciano Magrini}
+                \supervisor{Professor: Luciano Aparecido Magrini}
 		%\supervisor{Orientador}{Prof. Dr.}{Luís Antônio C. dos Santos}
 	% date
-		\presentationDate{06 de Dezembro de 2023}
+		\presentationDate{24 de Fevereiro de 2024}
 %%%%%%%%%%%%%%%%
 
 \begin{document}
@@ -134,7 +134,7 @@
 
 \section{Pesquisa histórica}
 \subsection{Contextualização da Teoria do Caos}
-\begin{frame}{"First Things First"}
+\begin{frame}{O contexto}
     \begin{exampleblock}{Teoria do Caos}
         \begin{itemize}
 		\item [$\bullet$] A teoria do caos é uma teoria matemática, que permite a descrição de fenômenos relacionados a sistemas dinâmicos.
@@ -211,38 +211,192 @@
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Sistema de Rossler}
-\begin{frame}{Rossler e o sistema de Rossler}
-    \begin{exampleblock}
-	     <1->{Sistema de Rossler}
-             \begin{itemize}
-                 \item [$\bullet$] O sistema de Rossler é uma equação protótipa do modelo de Lorenz, que pode ser ponto de partida para entender diversos sistemas naturais e artificiais.                     
-			\end{itemize}
+\section{Sistema de Rossler}
+\subsection{Abordagem Analítica}
+\begin{frame}{O sistema de Rossler}
+	\begin{exampleblock}
+		<1->{O Definição}
+		O sistema de Rossler é definido pelo seguinte sistema
+		\begin{equation}
+			\begin{cases}
+				\frac{dx}{dt} &= -y - z \\
+				\frac{dy}{dt} &= x + ay \\
+				\frac{dz}{dt} &= b + z(x - c)
+			\end{cases}
+		\end{equation}
+		onde $a, b, c \in \mathbb{R}$
+	\end{exampleblock}
+
+	\begin{exampleblock}
+		<2-> {Pontos de equilíbrio} 
+		Note que o sistema de Rossler é uma equação diferencial autônoma. Podemos
+		encontrar os seus de equilíbrio fazendo $f(x) = 0$.
+	\end{exampleblock}
+\end{frame}
+
+\begin{frame}
+	\begin{exampleblock}
+		<1-> {Pontos de equilíbrio} 
+		Resolvendo a equação, obtemos que o sistema de Rossler apresenta dois pontos de equilíbrio
+
+		\noindent
+		\begin{equation}
+			\resizebox{0.9 \hsize}{!}{
+			$(x_{\pm}, y_{\pm}, z_{\pm})	=
+			\left( \frac{c\pm\sqrt{c^2-4ab}}{2},
+			-\left(\frac{c\pm\sqrt{c^2-4ab}}{2a}\right),
+			\frac{c\pm\sqrt{c^2-4ab}}{2a}\right)$
+		}
+		\label{eq:equilibrium}
+		\end{equation}
+		
+	\end{exampleblock}
+
+	\begin{exampleblock}
+		<2-> {O jacobiano } 
+		Podemos calcular o Jacobiano do sistema para investigar os pontos de equilíbrio
+
+		\begin{equation}
+J = \begin{pmatrix}
+-\frac{\partial f_1}{\partial x} & -\frac{\partial f_1}{\partial y} & -\frac{\partial f_1}{\partial z} \\
+-\frac{\partial f_2}{\partial x} & -\frac{\partial f_2}{\partial y} & -\frac{\partial f_2}{\partial z} \\
+-\frac{\partial f_3}{\partial x} & -\frac{\partial f_3}{\partial y} & -\frac{\partial f_3}{\partial z}
+\end{pmatrix} = 
+\begin{pmatrix}0 & -1 & -1 \\ 1 & a & 0 \\ z & 0 & x-c\\\end{pmatrix}
+		\label{jacobian}
+		\end{equation}
+		
+	\end{exampleblock}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+		
+	\begin{exampleblock}
+		<1-> {Autovalores de $J$} 
+		Podemos encontrar os autovalores da matriz $J$ resolvendo a seguinte cúbica.
+
+		\begin{equation}
+			-\lambda^3+\lambda^2(a+x-c) + \lambda(ac-ax-1-z)+x-c+az =0
+			\label{eqlamb}
+		\end{equation}
+	
+		Ao aplicarmos os pontos de equilíbrio \ref{eq:equilibrium} a equação \ref{eqlamb}, podemos 
+		obter alguns resultados analíticos utilizando do seguinte teorema
+	\end{exampleblock}
+	
+	\begin{exampleblock}
+		<2-> {Teorema}
+Um ponto de equilíbrio $x*$ da equação diferencial $x' = f(x)$ é estável se todos os autovalores de $J*$, 
+o Jacobiano avaliado em $x*$, tiverem partes reais negativas. Um ponto de equilíbrio é instável se 
+pelo menos um dos seus autovalores tiver parte real positiva.
+	\end{exampleblock}
+
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Análise numérico-computacional}
+
+\begin{frame}
+
+	\begin{exampleblock}
+		<1-> {Aplicações do teorema}
+		Um ponto de equilíbrio é estável se para toda condição inicial suficientemente
+		perta do equilíbrio, as trajetórias da solução permanecem arbitrariamente pertas
+		do ponto de equilíbrio. Um ponto de equilíbrio instável é o contrário, as 
+		trajetórias são repelidas.
+	\end{exampleblock}
+
+	
+	\begin{exampleblock}
+		<2-> {Abordagem computacional}
+		Utilizaremos uma abordagem mais experimental e computacional para analizarmos 
+		os impactos dos dos diferentes valores de $a, b, c$ e das diferentes contições 
+		iniciais. 
+	\end{exampleblock}
+	
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+	\begin{exampleblock}
+		<1-> {Valores base para c}
+			Para $a, b = 0.1$ teremos que 
+			\begin{itemize}
+				\item[$\bullet$] c = 4, órbita com período 1
+				\item[$\bullet$] c = 6, órbita com período 2
+				\item[$\bullet$] c = 8.5, órbita com período 2
+				\item[$\bullet$] c = 9, órbita caótica
+				\item[$\bullet$] c = 12, órbita com período 3
+				\item[$\bullet$] c =18, órbita caótica
+			\end{itemize}	
+	\end{exampleblock}
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\begin{exampleblock}
+		<1-> {Valores base para a}
+			Para $b = 0.1$ e $c = 4$ teremos que 
+			\begin{itemize}
+				\item[$\bullet$] a = 0.05, 0.1 órbitaa com período 1
+				\item[$\bullet$] a = 0.15, órbita com período 2
+				\item[$\bullet$] a = 0.2, órbita com período 4
+				\item[$\bullet$] a = 025, órbita com período 2
+				\item[$\bullet$] a = 0.28, órbita com período 4
+				\item[$\bullet$] a = 0.3, órbita caótica
+				\item[$\bullet$] a = 0.33, órbita com período 3
+				\item[$\bullet$] a = 0.35, órbita com caótica
+			\end{itemize}	
+	\end{exampleblock}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+	\begin{exampleblock}
+		<1-> {Valores base para b}
+			Para $a = 0.1$ e $c = 4$ teremos que 
+			\begin{itemize}
+				\item[$\bullet$] b = 0.01, órbita com período 2
+				\item[$\bullet$] $b \in [0.04, 1]$ órbita com período 1
+			\end{itemize}	
+	\end{exampleblock}
+
+	\begin{exampleblock}
+		<2-> {Valores base para b}
+			Para $a = 0.1$ e $c = 7.3$ teremos que 
+			\begin{itemize}
+				\item[$\bullet$] b = 0.04, órbita com período 4
+				\item[$\bullet$] b = 0.1, 0.15, 0.25, 0.3 órbita com período 2
+				\item[$\bullet$] $b \in [0.04, 1]$ órbita com período 1
+			\end{itemize}	
 	\end{exampleblock}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Referências}
 \begin{frame}{Referências}
-
-
-\begin{thebibliography}{3}
-
-\beamertemplatearticlebibitems
-\bibitem{PPMID: 17969865; PMCID: PMC3202497.}
-Oestreicher C.,
-\newblock A history of chaos theory.
-\newblock\emph{PMC PubMed Central},
-\oldstylenums{2007}.
-
-\beamertemplatearticlebibitems
-\bibitem{PPMID: 17969865; PMCID: PMC3202497.}
-STROGATZ, Steven H. 
-\newblock Nonlinear dynamics and chaos with student solutions manual: With applications to physics, biology, chemistry, and engineering.
-\newblock\emph{CRC press},
-\oldstylenums{20018}.
-
-        \end{thebibliography}
+	\begin{thebibliography}{3}
+		\bibitem{PPMID: 17969865; PMCID: PMC3202497.}
+		Oestreicher C.,
+		\newblock A history of chaos theory.
+		\newblock\emph{PMC PubMed Central},
+		\oldstylenums{2007}.
+		
+		\beamertemplatearticlebibitems
+		\bibitem{PPMID: 17969865; PMCID: PMC3202497.}
+		STROGATZ, Steven H. 
+		\newblock Nonlinear dynamics and chaos with student solutions manual: With applications to physics, biology, chemistry, and engineering.
+		\newblock\emph{CRC press},
+		\oldstylenums{2018}.
+     \end{thebibliography}
 \end{frame}
 
 \begin{frame}{Referências}
@@ -265,6 +419,25 @@ STROGATZ, Steven H.
 	\end{thebibliography}
 \end{frame}
 
+\begin{frame}{Referências}
+    \begin{thebibliography}{5} % Adjust the number if needed
+		
+		
+		\beamertemplatearticlebibitems
+		\bibitem{Doering-Lopes}
+		Equações Diferenciais Ordinárias
+		\newblock Claus Ivo Doering e Artur Oscar Lopes
+		\newblock \emph{IMPA, 2016}.
+		\newblock \emph{ISBN: 978-85-244-0425-2}, 6ª edição.
+
+        \beamertemplatearticlebibitems
+		\bibitem{Viana-Espinar}
+		Differential Equations: A Dynamical Systems Approach to Theory and Practice
+		\newblock Marcelo Viana, José M. Espinar
+		\newblock \emph{Graduate Studies in Mathematics, 2021}.
+		
+	\end{thebibliography}
+\end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{document}
 
