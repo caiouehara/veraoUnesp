@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.2.22)  24 FEB 2024 10:08
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.2.22)  24 FEB 2024 13:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -713,7 +713,11 @@ kend-pdftex.def
 File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count313
 \l__pdf_internal_box=\box65
-) (presentation.aux)
+) (presentation.aux
+
+LaTeX Warning: Label `PPMID: 17969865; PMCID: PMC3202497.' multiply defined.
+
+)
 \openout1 = `presentation.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 69.
@@ -813,21 +817,67 @@ LaTeX Font Info:    Trying to load font information for U+rsfs on input line 71
 (C:\Users\Tigrocomputer\AppData\Local\Programs\MiKTeX\tex/latex/jknappen\ursfs.
 fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
-) [1
+)
 
-{C:/Users/Tigrocomputer/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] [2] 
-(presentation.aux)
+! LaTeX Error: Lonely \item--perhaps a missing list environment.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.79 \item [$\bullet$]
+                       Alguns dos tópicos discutidos: \\
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Underfull \hbox (badness 10000) detected at line 79
+[][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 79--80
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 81--82
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 83--84
+
+ []
+
+[1
+
+{C:/Users/Tigrocomputer/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
+! Undefined control sequence.
+l.145 		\beamertemplatearticlebibitems
+                                      
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+[2] [3] (presentation.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
  ***********
+
+
+LaTeX Warning: There were multiply-defined labels.
+
  ) 
 Here is how much of TeX's memory you used:
- 24917 strings out of 474485
- 642392 string characters out of 5739958
- 1932542 words of memory out of 5000000
- 46799 multiletter control sequences out of 15000+600000
- 568199 words of font info for 77 fonts, out of 8000000 for 9000
+ 24920 strings out of 474485
+ 642463 string characters out of 5739958
+ 1933542 words of memory out of 5000000
+ 46802 multiletter control sequences out of 15000+600000
+ 568506 words of font info for 78 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,6n,93p,739b,609s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\Tigrocomputer\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi
@@ -838,9 +888,9 @@ a/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/Tigr
 ocomputer/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.p
 fb><C:/Users/Tigrocomputer/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
 fonts/cm/cmti12.pfb>
-Output written on presentation.pdf (2 pages, 83575 bytes).
+Output written on presentation.pdf (3 pages, 85838 bytes).
 PDF statistics:
- 46 PDF objects out of 1000 (max. 8388607)
+ 50 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 

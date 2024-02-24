@@ -7,17 +7,15 @@ from scipy.integrate import solve_ivp
 # from mpl_toolkits.mplot3d import Axes3D
 
 
-def cut_beggining(M, percent):
-    if len(M.shape) > 1:
-        return np.delete(M, np.arange(int(len(M[1]) * percent)), 1)
-    else:
-        return np.delete(M, np.arange(int(len(M) * percent)), 0)
-
-
+def descarte_transiente(serie_numerica, porcentagem):
+    N = len(serie_numerica)
+    ponto_inicial = int(np.floor(N*porcentagem/100))
+    serie_recortada = serie_numerica[ponto_inicial::]
+    return serie_recortada
+    
 def rossler_system(t, xyz, a, b, c):
     x, y, z = xyz
     return [-(y + z), x + a * y, b + z * (x - c)]
-
 
 def sol_rossler(a, b, c):
     # a, b, c = 0.2, 0.2, 5.7
@@ -31,9 +29,9 @@ def sol_rossler(a, b, c):
     sol = solve_ivp(rossler_system, t_span, y0, method="RK45", t_eval=t_eval, args=cons)
     print(sol)
     sol_values = sol.y
-    sol_values_cut = cut_beggining(sol_values, 0.3)
+    sol_values_cut = descarte_transiente(sol_values, 0.3)
     t_values = sol.t
-    t = cut_beggining(t_values, 0.3)
+    t = descarte_transiente(t_values, 0.3)
     x = sol_values_cut[0]
     y = sol_values_cut[1]
     z = sol_values_cut[2]
